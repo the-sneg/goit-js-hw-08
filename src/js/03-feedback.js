@@ -20,6 +20,14 @@ function onTextInput(event) {
 function onFormSubmit(event) {
   event.preventDefault();
 
+  if (
+    formEl.elements.email.value === '' ||
+    formEl.elements.message.value === ''
+  ) {
+    alert('Please fill in all the fields!');
+    return;
+  }
+
   console.log(formData);
 
   event.currentTarget.reset();
